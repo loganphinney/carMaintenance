@@ -1,0 +1,14 @@
+/Users/loganphinney/RiderProjects/CarMaintenance/bin/Debug/net8.0/CarMaintenance
+/Users/loganphinney/RiderProjects/CarMaintenance/bin/Debug/net8.0/CarMaintenance.deps.json
+/Users/loganphinney/RiderProjects/CarMaintenance/bin/Debug/net8.0/CarMaintenance.runtimeconfig.json
+/Users/loganphinney/RiderProjects/CarMaintenance/bin/Debug/net8.0/CarMaintenance.dll
+/Users/loganphinney/RiderProjects/CarMaintenance/bin/Debug/net8.0/CarMaintenance.pdb
+/Users/loganphinney/RiderProjects/CarMaintenance/obj/Debug/net8.0/CarMaintenance.GeneratedMSBuildEditorConfig.editorconfig
+/Users/loganphinney/RiderProjects/CarMaintenance/obj/Debug/net8.0/CarMaintenance.AssemblyInfoInputs.cache
+/Users/loganphinney/RiderProjects/CarMaintenance/obj/Debug/net8.0/CarMaintenance.AssemblyInfo.cs
+/Users/loganphinney/RiderProjects/CarMaintenance/obj/Debug/net8.0/CarMaintenance.csproj.CoreCompileInputs.cache
+/Users/loganphinney/RiderProjects/CarMaintenance/obj/Debug/net8.0/CarMaintenance.dll
+/Users/loganphinney/RiderProjects/CarMaintenance/obj/Debug/net8.0/refint/CarMaintenance.dll
+/Users/loganphinney/RiderProjects/CarMaintenance/obj/Debug/net8.0/CarMaintenance.pdb
+/Users/loganphinney/RiderProjects/CarMaintenance/obj/Debug/net8.0/CarMaintenance.genruntimeconfig.cache
+/Users/loganphinney/RiderProjects/CarMaintenance/obj/Debug/net8.0/ref/CarMaintenance.dll
