@@ -11,11 +11,11 @@ public class MaintenanceList
         _records.Add(new MaintenanceEvent(date, description, partNumber));
         _records.Sort();
     }
-    
+
     public void PrintRecords()
     {
         foreach (var t in _records)
-            Console.WriteLine(t+"\n");
+            Console.WriteLine(t + "\n");
     }
 }
 
@@ -31,7 +31,7 @@ public class MaintenanceEvent(DateOnly date, string description, string partNumb
 
     public string PartNumber
     { get => partNumber; set => partNumber = value ?? throw new ArgumentNullException(nameof(value)); }
-    
+
     public override string ToString()
     { return "  Date: " + _date + "\n  Description: " + description + "\n  Part: " + partNumber; }
 

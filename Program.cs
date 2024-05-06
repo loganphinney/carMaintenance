@@ -4,7 +4,7 @@ namespace CarMaintenance;
 public class Program
 {
     private static List<Vehicle> _vehicleList = new();
-    
+
     public static void Main(string[] args)
     {
         OnLoadReadTxtFile();
@@ -38,7 +38,7 @@ public class Program
                             break;
                         default:
                             Console.WriteLine("ENTER A NUMBER IN RANGE TO MAKE A SELECTION.");
-                            break;                    
+                            break;
                     }
                     break;
                 case "2":
@@ -47,14 +47,14 @@ public class Program
                 case "3":
                     CreateMaintenanceEvent();
                     break;
-                case "4" :
+                case "4":
                     CreateNote();
                     break;
                 case "5":
                     ExportVehicleList();
                     mainMenu = false;
                     break;
-                case"debug1":
+                case "debug1":
                     Console.WriteLine("WARNING! Are you sure you want to reset the vehicle directory and populate it with predefined data? [Y] or [N]");
                     if (Console.ReadLine()?.Trim().ToUpper() == "Y")
                         DebugReset();
@@ -71,7 +71,7 @@ public class Program
         Console.Clear();
         for (int i = 0; i < _vehicleList.Count; i++)
         {
-            Console.WriteLine("Index: "+i);
+            Console.WriteLine("Index: " + i);
             Console.WriteLine(_vehicleList[i].ToString());
             Console.WriteLine();
         }
@@ -82,8 +82,8 @@ public class Program
         Console.Clear();
         for (int i = 0; i < _vehicleList.Count; i++)
         {
-            Console.WriteLine("Index: "+i);
-            Console.WriteLine(" "+_vehicleList[i].Year +" "+ _vehicleList[i].Make +" "+ _vehicleList[i].Model);
+            Console.WriteLine("Index: " + i);
+            Console.WriteLine(" " + _vehicleList[i].Year + " " + _vehicleList[i].Make + " " + _vehicleList[i].Model);
         }
         Console.WriteLine();
     }
@@ -112,7 +112,7 @@ public class Program
         Console.WriteLine("Enter index of vehicle to remove:");
         if (int.TryParse(Console.ReadLine(), out int selector))
         {
-            Console.WriteLine("WARNING! ARE YOU SURE YOU WANT TO REMOVE THE ["+_vehicleList[selector].Model+"]? [Y] or [N]");
+            Console.WriteLine("WARNING! ARE YOU SURE YOU WANT TO REMOVE THE [" + _vehicleList[selector].Model + "]? [Y] or [N]");
             if (Console.ReadLine()?.Trim().ToUpper() == "Y")
                 _vehicleList.RemoveAt(selector);
         }
@@ -126,7 +126,7 @@ public class Program
         Console.WriteLine("Enter index of vehicle to view:");
         int indexOf = Convert.ToInt32(Console.ReadLine());
         Console.Clear();
-        Console.WriteLine(_vehicleList[indexOf].Year +" "+ _vehicleList[indexOf].Make +" "+ _vehicleList[indexOf].Model);
+        Console.WriteLine(_vehicleList[indexOf].Year + " " + _vehicleList[indexOf].Make + " " + _vehicleList[indexOf].Model);
         _vehicleList[indexOf].DisplayNotes();
         _vehicleList[indexOf].DisplayRecords();
     }
@@ -206,17 +206,17 @@ public class Program
         _vehicleList[indexOf].AddNote(tempDate2, tempDescription2);
         Console.Clear();
     }
-    
+
     private static void ExportVehicleList()
     {
         File.Delete("vehicleList.json");
         for (int i = 0; i < _vehicleList.Count(); i++)
         {
-            string json = JsonSerializer.Serialize(_vehicleList[i]); 
+            string json = JsonSerializer.Serialize(_vehicleList[i]);
             File.AppendAllLines("vehicleList.json", [json]);
         }
     }
-    
+
     private static void OnLoadReadTxtFile()
     {
         try
@@ -230,12 +230,12 @@ public class Program
                     _vehicleList.Add(tempVehicle);
                 }
             }
-            Console.WriteLine("SUCCESSFULLY LOADED ["+_vehicleList.Count+"] VEHICLES.");
+            Console.WriteLine("SUCCESSFULLY LOADED [" + _vehicleList.Count + "] VEHICLES.");
             Console.WriteLine("All changes must be saved before closing the application.");
         }
         catch (Exception ex)
         { Console.WriteLine("An error occurred in reading the file: " + ex.Message); }
-        
+
     }
 
     private static void DebugReset()
@@ -244,16 +244,16 @@ public class Program
         _vehicleList.Clear();
         _vehicleList.Add(new Vehicle("Lexus", "IS300", 2002, "JTHBD1921200*****", "5w30", 6));
         _vehicleList.Add(new Vehicle("Honda", "Accord", 2007, "BSKRB7624756*****", "5w20", 4.2));
-        _vehicleList.Add(new Vehicle("Toyota","Highlander",2011,"TBVDG0175627*****","0w15",8.2));
-        _vehicleList[0].AddNote(DateOnly.Parse("02/21/2015"),"Added power steering fluid to top level.");
-        _vehicleList[0].AddNote(DateOnly.Parse("04/29/2011"),"Replaced 10a fuse for highbeam control.");
-        _vehicleList[0].AddMaintenanceEvent(DateOnly.Parse("05/10/2015"),"Polyurethane Steering Rack Bushing","HFJSK15073");
-        _vehicleList[0].AddMaintenanceEvent(DateOnly.Parse("02/21/2017"),"Front Lower Control Arms","GHT901724");
-        _vehicleList[1].AddNote(DateOnly.Parse("08/30/2024"),"Lost air in one tire, had to patch it." );
-        _vehicleList[1].AddNote(DateOnly.Parse("01/12/2022"),"35% ceramic window tint all around." );
-        _vehicleList[1].AddMaintenanceEvent(DateOnly.Parse("10/12/2022"),"Replaced thermostat.","HKLYIRS678");
-        _vehicleList[2].AddNote(DateOnly.Parse("04/07/2016"),"Replaced subwoofer with junkyard replacement.");
-        _vehicleList[2].AddNote(DateOnly.Parse("08/24/2017"),"5% tint on all rear windows and 35% on front two windows.");
-        _vehicleList[2].AddMaintenanceEvent(DateOnly.Parse("06/29/2017"),"Replaced OEM sway bar end links","THSL67985");
+        _vehicleList.Add(new Vehicle("Toyota", "Highlander", 2011, "TBVDG0175627*****", "0w15", 8.2));
+        _vehicleList[0].AddNote(DateOnly.Parse("02/21/2015"), "Added power steering fluid to top level.");
+        _vehicleList[0].AddNote(DateOnly.Parse("04/29/2011"), "Replaced 10a fuse for highbeam control.");
+        _vehicleList[0].AddMaintenanceEvent(DateOnly.Parse("05/10/2015"), "Polyurethane Steering Rack Bushing", "HFJSK15073");
+        _vehicleList[0].AddMaintenanceEvent(DateOnly.Parse("02/21/2017"), "Front Lower Control Arms", "GHT901724");
+        _vehicleList[1].AddNote(DateOnly.Parse("08/30/2024"), "Lost air in one tire, had to patch it.");
+        _vehicleList[1].AddNote(DateOnly.Parse("01/12/2022"), "35% ceramic window tint all around.");
+        _vehicleList[1].AddMaintenanceEvent(DateOnly.Parse("10/12/2022"), "Replaced thermostat.", "HKLYIRS678");
+        _vehicleList[2].AddNote(DateOnly.Parse("04/07/2016"), "Replaced subwoofer with junkyard replacement.");
+        _vehicleList[2].AddNote(DateOnly.Parse("08/24/2017"), "5% tint on all rear windows and 35% on front two windows.");
+        _vehicleList[2].AddMaintenanceEvent(DateOnly.Parse("06/29/2017"), "Replaced OEM sway bar end links", "THSL67985");
     }
 }

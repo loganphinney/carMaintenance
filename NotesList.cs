@@ -11,11 +11,11 @@ public class NotesList
         _notes.Add(new Note(date, description));
         _notes.Sort();
     }
-    
+
     public void PrintNotes()
     {
         foreach (var t in _notes)
-            Console.WriteLine(t+"\n");
+            Console.WriteLine(t + "\n");
     }
 }
 
@@ -25,13 +25,13 @@ public class Note(DateOnly date, string description) : IComparable<Note>
 
     public DateOnly Date
     { get => _date; set => _date = value; }
-    
+
     public string Description
     { get => description; set => description = value ?? throw new ArgumentNullException(nameof(value)); }
-    
+
     public override string ToString()
     { return "  Date: " + _date + "\n  Description: " + description; }
-    
+
     public int CompareTo(Note? other)
     {
         if (ReferenceEquals(this, other)) return 0;
